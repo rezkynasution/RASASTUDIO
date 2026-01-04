@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)https://l4a7bo0.live.codepad.app/index.html -->
+<html lang="id"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rasa Studio | Studio Foto Profesional Bekasi</title>
+
+<style>
+:root{
+  --bg:#F4F4F4;
+  --dark:#111;
+  --gray:#666;
+  --accent:#000;
+}
+*{
+  box-sizing:border-box;
+  font-family:"Helvetica Neue", Arial, sans-serif;
+}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--dark);
+}
+a{text-decoration:none;color:inherit}
+
+/* NAVBAR */
+nav{
+  position:fixed;
+  top:0;left:0;
+  width:100%;
+  padding:16px 8%;
+  background:#ffffff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 5px 20px rgba(0,0,0,.05);
+  z-index:10;
+  backdrop-filter: blur(6px);
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.brand img{
+  width:600px;
+  height:auto;
+  object-fit:contain;
+}
+.brand h1{
+  font-size:30px;
+  letter-spacing:1.5px;
+  font-weight:600;
+  font-family: Playfair Display;
+}
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:28px;
+}
+nav ul li{
+  font-size:18px;
+}
+
+/* HERO SLIDER */
+.hero-slider{
+  position:relative;
+  height:100vh;
+  overflow:hidden;
+}
+.slide{
+  position:absolute;
+  inset:0;
+  background-size:cover;
+  background-position:center;
+  opacity:0;
+  transition:opacity 1.2s ease;
+}
+.slide.active{opacity:1;}
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.45);
+  z-index:1;
+}
+.hero-box{
+  position:absolute;
+  z-index:2;
+  top:50%;
+  left:8%;
+  transform:translateY(-50%);
+  background:rgba(255,255,255,0.92);
+  padding:42px;
+  max-width:520px;
+  border-radius:16px;
+}
+
+
+.hero-box h2{
+  font-size:40px;
+  margin-bottom:16px;
+}
+.hero-box p{
+  color:var(--gray);
+  line-height:1.7;
+}
+.hero-box h4{
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+.hero-box a{
+  display:inline-block;
+  margin-top:24px;
+  padding:14px 30px;
+  background:var(--accent);
+  color:#fff;
+  border-radius:30px;
+  font-size:14px;
+  letter-spacing:1px;
+}
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  padding:16px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:999;
+
+  transition: background 0.4s ease, backdrop-filter 0.4s ease;
+}
+
+/* Saat di hero */
+nav.transparent{
+  background:rgba(255,255,255,0.18);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+
+/* Saat scroll */
+nav.solid{
+  background:rgba(255,255,255,0.95);
+  backdrop-filter: blur(6px);
+}
+
+.prev{left:30px}
+.next{right:30px}
+
+/* SECTION */
+section{padding:110px 8%;}
+.title{text-align:center;margin-bottom:70px;}
+.title h2{font-size:34px;}
+.title p{color:var(--gray);max-width:620px;margin:auto;}
+.hero-slider{
+  margin-top:0;
+}
+nav.transparent h1,
+nav.transparent a{
+  color:#fff;
+}
+
+/* ABOUT */
+.about{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
+}
+.about img{
+  width:100%;
+  border-radius:22px;
+}
+.about p{
+  line-height:1.9;
+  color:var(--gray);
+  font-size:15px;
+}
+
+/* SERVICES */
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:32px;
+}
+.card{
+  background:#fff;
+  padding:34px;
+  border-radius:22px;
+  box-shadow:0 12px 35px rgba(0,0,0,.06);
+}
+
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:22px;
+}
+.gallery img{
+  width:100%;
+  border-radius:18px;
+  transition:.4s;
+}
+.gallery img:hover{transform:scale(1.03);}
+
+/* CONTACT CTA */
+.contact-cta{
+  background:#000;
+  color:#fff;
+  padding:120px 8% 90px;
+}
+.cta-top{text-align:center;max-width:760px;margin:0 auto 90px;}
+.cta-top h2{
+  font-size:42px;
+  font-family:Georgia,serif;
+}
+.cta-top p{color:#ccc;}
+.cta-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-top:36px;
+  padding:16px 38px;
+  background:#25D366;
+  color:#fff;
+  border-radius:50px;
+  box-shadow:0 15px 40px rgba(37,211,102,.35);
+}
+.cta-info{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:60px;
+  max-width:1100px;
+  margin:auto;
+}
+.info-box p{color:#ccc;line-height:1.8;}
+.info-box a{text-decoration:underline;}
+
+/* FOOTER */
+footer{
+  padding:46px;
+  background:#111;
+  color:#ccc;
+  text-align:center;
+  font-size:14px;
+}
+
+@media(max-width:768px){
+  nav ul{display:none}
+  .about{grid-template-columns:1fr}
+  .hero-box h2{font-size:30px}
+}
+
+</style>
+</head>
+
+<body>
+<!-- POPUP PROMO IMAGE -->
+<div class="popup-overlay" id="promoPopup">
+  <div class="popup-box image-only">
+    <button class="popup-close" onclick="closePopup()">×</button>
+
+    <!-- GANTI SRC GAMBAR PROMO DI SINI -->
+    <a href="https://wa.me/6285117605728" target="_blank">
+      <img src="./promo.jpg" alt="Promo Rasa Studio">
+    </a>
+
+  </div>
+</div>
+
+    <nav class="transparent">
+
+  <div class="brand">
+    <!-- GANTI LOGO DI SINI -->
+    <h1>RASA STUDIO</h1>
+  </div>
+  <ul>
+    <li><a href="https://l4a7bo0.live.codepad.app/index.html#about">About</a></li>
+    <li><a href="https://l4a7bo0.live.codepad.app/index.html#services">Services</a></li>
+    <li><a href="https://l4a7bo0.live.codepad.app/index.html#gallery">Gallery</a></li>
+    <li><a href="https://l4a7bo0.live.codepad.app/index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero-slider">
+  <div class="slide active" style="background-image:url(&#39;https://i.imgur.com/FoQn5l5.jpeg&#39;)"></div>
+  <div class="slide" style="background-image:url(&#39;https://i.imgur.com/MVBOju9.jpeg&#39;)"></div>
+  <div class="slide" style="background-image:url(&#39;https://i.imgur.com/gonWKIz.jpeg&#39;)"></div>
+  <div class="slide" style="background-image:url(&#39;https://i.imgur.com/qyt4u2N.jpeg&#39;)"></div>
+  <div class="slide" style="background-image:url(&#39;https://i.imgur.com/gonWKIz.jpeg&#39;)"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-box">
+    <h4>Get</h4>
+    <h2>Cashback 20% Up to Rp 100.000</h2>
+    <p>Minimum Purchase Rp 500.000</p>
+    <a href="https://wa.me/6285117605728">Book via WhatsApp</a>
+  </div>
+  <button class="nav prev">❮</button>
+  <button class="nav next">❯</button>
+</div>
+
+<section id="about">
+  <div class="title">
+    <h2>About Rasa Studio</h2>
+    <p>Studio foto profesional di Bekasi</p>
+  </div>
+  <div class="about">
+    <img src="./fjKFV4P.jpeg" alt="Foto Rasa Studio">
+
+    <p>
+      Rasa Studio adalah studio fotografi profesional yang berlokasi di Bekasi, menghadirkan pengalaman pemotretan yang mengutamakan kenyamanan dan kepercayaan diri setiap klien. Dengan konsep visual modern, minimal, dan artistik, kami melayani berbagai kebutuhan fotografi seperti foto wisuda, potret formal profesional, foto pasangan, hingga foto visa dan keperluan administratif. Setiap sesi dirancang secara personal agar karakter dan ekspresi alami klien dapat tertangkap dengan maksimal. </p>
+       <p>  Didukung oleh arahan pose yang ramah, berbagai spot foto, properti, serta aksesoris yang tersedia, Rasa Studio memastikan setiap hasil foto tampil elegan dan berkelas. Kami menggunakan peralatan fotografi berkualitas tinggi, pencahayaan profesional, serta proses editing yang rapi dan natural untuk menghasilkan foto yang tidak hanya indah secara visual, tetapi juga memiliki nilai emosional dan meningkatkan rasa percaya diri klien.
+            </p>
+  </div>
+</section>
+
+<section id="services">
+  <div class="title"><h2>Our Services</h2></div>
+  <div class="services">
+    <div class="card"><h3><b>Graduation Photography</b></h3> <br> abadikan momen kelulusanmu bersama orang orang terdekatmu</div>
+    <div class="card"><h3><b>Formal &amp; Professional Portrait</b></h3><br> bangun personal branding-mu dengan foto profesional</div>
+    <div class="card"><h3><b>Pre-Wedding Photo</b></h3><br>ingat selalu momen indah bersama pasangan mu</div>
+    <div class="card"><h3><b>Non-Formal Photo</b></h3><br> rasakan kehangatan momen bersama orang terdekat</div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="title"><h2>Gallery</h2></div>
+  <div class="gallery">
+    <img src="./8emO8kc.jpeg" alt="rw1">
+    <img src="./tP4Xpxn.jpeg" alt="rw2">
+    <img src="./n2bCIIq.jpeg" alt="rw3">
+    <img src="./QTfYnqW.jpeg" alt="rw4">
+    <img src="./luZgEKb.jpeg" alt="rw5">
+    <img src="./8JrT0YU.jpeg" alt="rw6">
+    <img src="./v3D4BgE.jpeg" alt="rw7">
+  </div>
+</section>
+
+<section class="contact-cta" id="contact">
+  <div class="cta-top">
+    <h2>Siap Booking Sesi Foto?</h2>
+    <p>Hubungi kami sekarang untuk reservasi.</p>
+    <a class="cta-btn" href="https://wa.me/6285117605728">✆ Hubungi via WhatsApp</a>
+  </div>
+  <div class="cta-info">
+    <div class="info-box">
+      <p>⚲ Bekasi, Jawa Barat</p>
+      <a href="https://maps.app.goo.gl/u46MzqPP7U4ADeB18">Jalan raya setu, Jl. Kp. Rw. Banteng desa No.rt04/01, Mekarwangi, Kec. Cikarang Bar., Kabupaten Bekasi, Jawa Barat 17530</a>
+    </div>
+    <div class="info-box">
+      <p>◴ Setiap Hari<br>10.00 WIB - 20.00 WIB</p>
+    </div>
+    <div class="info-box">
+      <p>☏ Contact Person 0851-1760-5728<br> <a href="https://www.instagram.com/ra.sa___?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw=="> 🅾Instagram @ra.sa_</a>
+    </p></div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Rasa Studio · Bekasi
+</footer>
+
+<script>
+const slides=document.querySelectorAll('.slide');
+let index=0;
+function showSlide(i){
+  slides.forEach(s=>s.classList.remove('active'));
+  slides[i].classList.add('active');
+}
+document.querySelector('.next').onclick=()=>{index=(index+1)%slides.length;showSlide(index);}
+document.querySelector('.prev').onclick=()=>{index=(index-1+slides.length)%slides.length;showSlide(index);}
+setInterval(()=>{index=(index+1)%slides.length;showSlide(index);},6000);
+</script>
+<script>
+    const nav = document.querySelector('nav');
+    const heroHeight = document.querySelector('.hero-slider').offsetHeight;
+    
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > heroHeight - 80){
+        nav.classList.remove('transparent');
+        nav.classList.add('solid');
+      } else {
+        nav.classList.remove('solid');
+        nav.classList.add('transparent');
+      }
+    });
+    </script>
+    
+
+
+</body></html>
